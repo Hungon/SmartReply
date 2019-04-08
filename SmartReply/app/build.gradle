@@ -20,6 +20,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    // disable compression of tflite files
+    aaptOptions {
+        noCompress "tflite"
+    }
 }
 
 dependencies {
@@ -31,4 +35,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+
+    // NLP API
+    implementation 'com.google.firebase:firebase-ml-natural-language:18.2.0'
+    implementation 'com.google.firebase:firebase-ml-natural-language-smart-reply-model:18.0.0'
 }
